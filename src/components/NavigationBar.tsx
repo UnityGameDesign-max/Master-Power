@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { Menu } from 'antd';
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
-export const NavigationBar: React.FC = () => {
+export const NavigationBar: FC = () => {
   return (
-    <nav>
-      <ul>
-        <li>Main Page</li>
-        <li>Settings</li>
-        <li><small>Hi Tumelo Mahlangu</small></li>
-      </ul>
+    <nav className="menuBar">
+      <Menu mode="horizontal">
+        <Menu.Item>
+          <a href="">Main Page</a>
+        </Menu.Item>
+        <Menu.Item>
+          <a href="">Settings</a>
+        </Menu.Item>
+      </Menu>
     </nav>
   )
 };
