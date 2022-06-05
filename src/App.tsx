@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import './styles/App.scss';
+import {NavigationBar} from './components/NavigationBar';
+import {Main} from './pages/Main';
 
 function App() {
   return (
     <div className="App">
-      hj
+      <NavigationBar />
+      <Main />
     </div>
   );
 }
