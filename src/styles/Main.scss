@@ -1,2 +1,13 @@
-$base-color:  black;
 
+$primary-color: #333; 
+main{
+    background-color: $primary-color;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
