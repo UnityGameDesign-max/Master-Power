@@ -1,7 +1,6 @@
-<svg width="183" height="114" viewBox="0 0 183 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="1" x2="1" y2="28" stroke="black" stroke-width="2"/>
-<line x1="182" x2="182" y2="28" stroke="black" stroke-width="2"/>
-<line x1="-5.20979e-05" y1="27.0073" x2="183" y2="26.9978" stroke="black" stroke-width="2"/>
-<line x1="84" y1="2" x2="84" y2="106" stroke="black" stroke-width="2"/>
-<path d="M84.5 114L78.0048 102.75H90.9952L84.5 114Z" fill="black"/>
+<svg width="344" height="108" viewBox="0 0 344 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="1.2785" y1="0.00376253" x2="0.999967" y2="74.0303" stroke="black" stroke-width="2"/>
+<line x1="342.279" y1="0.00376253" x2="342" y2="74.0303" stroke="black" stroke-width="2"/>
+<line y1="73" x2="341" y2="73" stroke="black" stroke-width="2"/>
+<line x1="163" y1="4" x2="163" y2="108" stroke="black" stroke-width="2"/>
 </svg>

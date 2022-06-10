@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+* {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+/*# sourceMappingURL=App.css.map */

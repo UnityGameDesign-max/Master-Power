@@ -1,0 +1,35 @@
+$tertiary-color: #fff;
+$lead-button-color: rgba(196, 20, 20, 0.541);
+$manual-auto-button-color: rgba(20, 96, 196, 0.541);
+$silver-color: #d7d7d7;
+
+@mixin typographyFormat{
+    font-weight: 600;
+}
+.buttons{
+    margin: 0 0 300px 300px;
+}
+.option-btn{
+    border: 3px solid $silver-color ;
+    margin-bottom: 0.3em;
+    color: $tertiary-color;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 0.9em 1.2em;
+    @include typographyFormat;
+}
+
+section p{
+    color: $tertiary-color;
+    margin: 0;
+    @include typographyFormat;
+    font-size: 0.95rem;
+}
+.manual-auto{
+    background-color: $manual-auto-button-color;
+}
+.lead{
+    padding-inline: 2em;
+    display: block;
+    background-color: $lead-button-color;
+}

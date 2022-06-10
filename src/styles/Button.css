@@ -1,0 +1,31 @@
+.buttons {
+  margin: 0 0 300px 300px;
+}
+
+.option-btn {
+  border: 3px solid #d7d7d7;
+  margin-bottom: 0.3em;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 0.9em 1.2em;
+  font-weight: 600;
+}
+
+section p {
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.manual-auto {
+  background-color: rgba(20, 96, 196, 0.541);
+}
+
+.lead {
+  padding-inline: 2em;
+  display: block;
+  background-color: rgba(196, 20, 20, 0.541);
+}
+/*# sourceMappingURL=Button.css.map */

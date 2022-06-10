@@ -3,11 +3,34 @@ $primary-color: #333;
 main{
     background-color: $primary-color;
     height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    section{
+    padding: 1.6em 4em;
+    .top-connection{
         display: flex;
-        align-items: center;
-        flex-direction: column;
+        justify-content: space-evenly;
     }
+   
+    .top-connection section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .power_meter_right{
+        position: relative;
+    }
+    .right_connection{
+        width: 230px;
+        position: fixed;
+        bottom: 170px;
+        right: 330px;
+        border: 1px solid red;
+    }
+}
+// svg{
+//     border: 1px solid red;
+//     padding-inline: 2px;
+// }
+
+.generatorB, .power_meter_right, .short_connection_right, .breaker_right{
+    margin-left: 140px;
 }

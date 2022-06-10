@@ -1,6 +1,10 @@
 main {
   background-color: #333;
   height: 100vh;
+  padding: 1.6em 4em;
+}
+
+main .top-connection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,16 +13,32 @@ main {
           justify-content: space-evenly;
 }
 
-main section {
+main .top-connection section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .power_meter_right {
+  position: relative;
+}
+
+main .right_connection {
+  width: 230px;
+  position: fixed;
+  bottom: 170px;
+  right: 330px;
+  border: 1px solid red;
+}
+
+.generatorB, .power_meter_right, .short_connection_right, .breaker_right {
+  margin-left: 140px;
 }
 /*# sourceMappingURL=Main.css.map */
