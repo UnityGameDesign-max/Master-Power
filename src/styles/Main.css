@@ -1,44 +1,30 @@
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #333;
   height: 100vh;
-  padding: 1.6em 4em;
-}
-
-main .top-connection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-main .top-connection section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main .power_meter_right {
-  position: relative;
-}
-
-main .right_connection {
-  width: 230px;
-  position: fixed;
-  bottom: 170px;
-  right: 330px;
-  border: 1px solid red;
 }
 
 .generatorB, .power_meter_right, .short_connection_right, .breaker_right {
   margin-left: 140px;
+}
+
+.utility-reference {
+  fill: #1e7dcf;
+}
+
+.line-breaker {
+  cursor: pointer;
+}
+
+.open {
+  -webkit-transform: rotate(-130deg);
+          transform: rotate(-130deg);
+}
+
+.close {
+  -webkit-transform: rotate();
+          transform: rotate();
 }
 /*# sourceMappingURL=Main.css.map */
