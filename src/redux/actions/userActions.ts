@@ -1,14 +1,14 @@
 import { actionTypes } from "../constants/actionType";
 
-export const addUser = (user : string) => {
+export const showUser = (user : string) => {
   return {
-    type: actionTypes.ADD_USER,
+    type: actionTypes.VIEW_USER,
     payload: user,
   };
 };
 
-export const removeUser = () => { 
+export const updateUser = () => { 
     return {
-      type: actionTypes.REMOVE_USER,
+      type: actionTypes.UPDATE_USER,
     };
   };

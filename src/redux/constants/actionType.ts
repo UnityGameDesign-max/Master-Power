@@ -1,4 +1,4 @@
 export const actionTypes = {
-    ADD_USER: "ADD_USER",
-    REMOVE_USER: "REMOVER_USER"
+    VIEW_USER: "ADD_USER",
+   UPDATE_USER: "UPDATE_USER"
 }

@@ -2,15 +2,16 @@ import React from 'react';
 import {Layout, Anchor, Typography, Menu} from 'antd';
 import '../styles/Navigation.css';
 import { Link } from 'react-router-dom';
+import { useSelector} from 'react-redux';
+import { userInitialization } from '../redux/reducers/userReducer';
 
 
 const {Header} = Layout;
 const { Title } = Typography;
 
-interface NavigationMenu{
-  navigationLink: string
-}
 export const NavigationBar : React.FC = () => {
+  const userInfo = useSelector<userInitialization, userInitialization["user"]>((state) => state.user);
+  console.log(userInfo);
   return (
     <nav>
       <Layout>
@@ -24,7 +25,7 @@ export const NavigationBar : React.FC = () => {
               <Link to="/settings">Settings Page</Link>
             </Menu.Item>
             <Menu.Item>
-              <Typography style={{color: 'white'}}>Tumelo Mahlangu</Typography>
+              <Typography style={{color: 'white'}}>{userInfo}</Typography>
             </Menu.Item>
           </Menu>
         </Header>
