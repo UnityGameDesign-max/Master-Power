@@ -9,9 +9,13 @@ import {motion} from 'framer-motion';
 import Buttons from '../components/Buttons';
 import { lineVariant } from '../utility/animationVariants';
 import { Readings } from '../components/Readings';
+import { LoadingOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
 
 
 const imageWidth: string = "120";
+const STROKE_RED: string = '#EA1313';
+const STROKE_GREEN: string = '#56A824';
 
 type colorStroke = {
   stroke: string;
@@ -19,53 +23,64 @@ type colorStroke = {
   stroke3: string;
   stroke4: string;
 }
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 export const Main = ({stroke, stroke1, stroke3, stroke4}:colorStroke) => {
   const [isRotatedLine_1, setIsRotatedLine_1] = useState(true);
   const [isRotatedLine_2, setIsRotatedLine_2] = useState(true);
   const [isRotatedLine_3, setIsRotatedLine_3] = useState(true);
   const [isRotatedLine_4, setIsRotatedLine_4] = useState(true);
-  const [reading, setReading] = useState("");
+  const [reading, setReading] = useState<{[Value: string]: any}>({});
 
   const getReadingAPI = () => {
-    if(!isRotatedLine_1 || !isRotatedLine_3){
-      fetch(REQUEST_API_URL).then(
-        (response) => response.json()).then((data) => setReading(data))
+    fetch(REQUEST_API_URL)
+      .then((response) => response.json())
+      .then((data) => setReading(data));
+  }
+
+  const getMeterReading =() =>{
+    if(!isRotatedLine_1 || !isRotatedLine_3 || (!isRotatedLine_2 && !isRotatedLine_4)){
+      return JSON.stringify(
+        reading[Object.keys(reading)[Object.keys(reading).length - 1]]
+      );
+    }else{
+      return "0";
     }
   }
+
   useEffect(()=>{
     getReadingAPI();
   },[])
 
   if(isRotatedLine_1){
-    stroke = '#EA1313';
+    stroke = STROKE_RED;
   }else{
-    stroke = '#56A824';
+    stroke = STROKE_GREEN;
   }
   if(isRotatedLine_3){
-    stroke1 = '#EA1313'
+    stroke1 = STROKE_RED
   }else{
-    stroke1 = '#56A824';
+    stroke1 = STROKE_GREEN;
   }
   if(isRotatedLine_2){
-    stroke3 = '#EA1313'
+    stroke3 = STROKE_RED;
   }else{
-    stroke3 = '#56A824';
+    stroke3 = STROKE_GREEN;
   }
   if(isRotatedLine_4 && isRotatedLine_2){
-    stroke3 = '#EA1313';
-    stroke4 = '#EA1313';
+    stroke3 = STROKE_RED;
+    stroke4 = STROKE_RED;
   
   }if(!isRotatedLine_4 && isRotatedLine_2){
-    stroke3 = '#EA1313';
-    stroke4 = '#EA1313';
+    stroke3 = STROKE_RED;
+    stroke4 = STROKE_RED;
   }
   if(!isRotatedLine_4 && !isRotatedLine_2){
-    stroke3 = '#56A824';
-    stroke4 = '#56A824';
+    stroke3 = STROKE_GREEN;
+    stroke4 = STROKE_GREEN;
   }if(!isRotatedLine_2 && isRotatedLine_4){
-    stroke3 = '#56A824';
-    stroke4 = '#EA1313';
+    stroke3 = STROKE_GREEN;
+    stroke4 = STROKE_RED;
   }
 
   const rotateBreaker1 = () :void => {
@@ -84,7 +99,7 @@ export const Main = ({stroke, stroke1, stroke3, stroke4}:colorStroke) => {
   return (
     <main>
       <Buttons />
-        <svg className='power-svg' width="80%" height="645"  viewBox="0 -35 964 912"  fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='power-svg' width="70%" height="645"  viewBox="0 -35 964 912"  fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="15" y1="500.999" x2="15.0154" y2="546.999" stroke='#56A824' stroke-width="4"/>
           <line x1="362" y1="501" x2="362.015" y2="951" stroke='#56A824' stroke-width="4"/>
           <line x1="362" y1="1.99993" x2="362.015" y2="428" stroke={stroke1} stroke-width="4"/>
@@ -150,7 +165,7 @@ export const Main = ({stroke, stroke1, stroke3, stroke4}:colorStroke) => {
           <path d="M844.854 502.114H847.24L848.653 503.946L849.662 505.139L852.084 508.25H849.527L847.879 506.162L847.176 505.168L844.854 502.114ZM852.432 499.727C852.432 501.295 852.138 502.637 851.551 503.754C850.969 504.867 850.173 505.719 849.165 506.311C848.161 506.903 847.022 507.199 845.749 507.199C844.475 507.199 843.334 506.903 842.325 506.311C841.321 505.714 840.526 504.86 839.939 503.747C839.357 502.63 839.065 501.29 839.065 499.727C839.065 498.16 839.357 496.82 839.939 495.707C840.526 494.59 841.321 493.735 842.325 493.143C843.334 492.552 844.475 492.256 845.749 492.256C847.022 492.256 848.161 492.552 849.165 493.143C850.173 493.735 850.969 494.59 851.551 495.707C852.138 496.82 852.432 498.16 852.432 499.727ZM849.783 499.727C849.783 498.624 849.61 497.694 849.264 496.936C848.923 496.174 848.45 495.598 847.844 495.21C847.238 494.817 846.539 494.621 845.749 494.621C844.958 494.621 844.259 494.817 843.653 495.21C843.047 495.598 842.571 496.174 842.226 496.936C841.885 497.694 841.714 498.624 841.714 499.727C841.714 500.83 841.885 501.763 842.226 502.526C842.571 503.283 843.047 503.858 843.653 504.251C844.259 504.64 844.958 504.834 845.749 504.834C846.539 504.834 847.238 504.64 847.844 504.251C848.45 503.858 848.923 503.283 849.264 502.526C849.61 501.763 849.783 500.83 849.783 499.727ZM864.982 507.199C863.959 507.199 863.05 507.024 862.254 506.673C861.464 506.323 860.839 505.835 860.379 505.21C859.92 504.585 859.676 503.863 859.648 503.044H862.318C862.342 503.437 862.472 503.78 862.709 504.074C862.946 504.363 863.26 504.588 863.653 504.749C864.046 504.91 864.487 504.99 864.974 504.99C865.495 504.99 865.957 504.9 866.359 504.72C866.762 504.536 867.077 504.28 867.304 503.953C867.531 503.626 867.643 503.25 867.638 502.824C867.643 502.384 867.529 501.995 867.297 501.659C867.065 501.323 866.729 501.06 866.288 500.871C865.853 500.681 865.327 500.587 864.712 500.587H863.426V498.555H864.712C865.218 498.555 865.661 498.468 866.04 498.293C866.423 498.117 866.724 497.871 866.942 497.554C867.16 497.232 867.266 496.86 867.261 496.439C867.266 496.027 867.174 495.67 866.984 495.366C866.8 495.059 866.537 494.82 866.196 494.649C865.86 494.479 865.464 494.393 865.01 494.393C864.565 494.393 864.153 494.474 863.774 494.635C863.395 494.796 863.09 495.026 862.858 495.324C862.626 495.617 862.503 495.968 862.489 496.375H859.953C859.972 495.561 860.206 494.846 860.656 494.23C861.111 493.61 861.717 493.127 862.474 492.781C863.232 492.431 864.082 492.256 865.024 492.256C865.995 492.256 866.838 492.438 867.553 492.803C868.272 493.162 868.829 493.648 869.222 494.259C869.615 494.869 869.811 495.544 869.811 496.283C869.816 497.102 869.574 497.788 869.087 498.342C868.604 498.896 867.969 499.259 867.183 499.429V499.543C868.206 499.685 868.99 500.063 869.534 500.679C870.083 501.29 870.356 502.05 870.351 502.959C870.351 503.773 870.119 504.502 869.655 505.146C869.196 505.786 868.561 506.287 867.751 506.652C866.946 507.017 866.023 507.199 864.982 507.199Z" fill="white"/>
         </svg>
        
-        <Readings value=''/>
+        <Readings value={reading ?  getMeterReading() : <Spin indicator={antIcon} />}/>
     </main>
   )
 }

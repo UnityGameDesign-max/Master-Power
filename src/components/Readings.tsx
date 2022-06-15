@@ -2,12 +2,12 @@ import React, {FC} from 'react'
 import '../styles/Readings.css';
 
 type powerMeterReadings = {
-    value: string;
+    value: any;
 }
 export const Readings = ({value}:powerMeterReadings) => {
   return (
     <section className="readings-value">
-        <p>value</p>
+        <p>POWER METER READINGS: {value}</p>
     </section>
   )
 }

@@ -12,7 +12,7 @@ const Buttons : FC = () => {
     notification.open({
       message: 'MODE',
       description:
-        `The button MODE has changed to ${!mode ? 'MANUAL': 'AUTO'}`,
+        `The button MODE has changed to ${mode ? 'MANUAL': 'AUTO'}`,
       onClick: () => {
         console.log('Notification Clicked!');
       },
@@ -36,7 +36,7 @@ const Buttons : FC = () => {
       <p>LEAD OR LAG</p>
       
       <button onClick={openLeadNotification}
-       className={"option-btn lead" + (lead ? 'blue-btn-lead': 'red-btn-lead')}
+       className={"option-btn lead " + (!lead ? 'blue-btn-lead': 'red-btn-lead')}
        >{lead ? 'LEAD' : 'LAG'}</button>
       
       <button onClick={openModeNotification}
