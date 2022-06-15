@@ -24,7 +24,7 @@ export const NavigationBar : React.FC = () => {
               <Link to="/settings">Settings Page</Link>
             </Menu.Item>
             <Menu.Item>
-              <Typography style={{color: 'white'}}>{userInfo}</Typography>
+              <Typography style={{color: 'white'}}>Tumelo</Typography>
             </Menu.Item>
           </Menu>
         </Header>
