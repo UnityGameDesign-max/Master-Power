@@ -1,7 +1,6 @@
 import { compose, createStore } from "redux";
 import allReducers from "./reducers";
 
-
 export const theStore = createStore(
   allReducers,
   compose(
