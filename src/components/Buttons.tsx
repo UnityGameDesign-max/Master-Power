@@ -1,6 +1,6 @@
-import React, {FC, MouseEvent, useState} from 'react'
+import React, {FC, useState} from 'react'
 import '../styles/Button.css';
-import { message, notification } from 'antd';
+import { notification } from 'antd';
 
 
 const Buttons : FC = () => {
