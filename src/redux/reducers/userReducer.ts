@@ -16,6 +16,6 @@ export const userReducer = (state: userInitialization = initialState, action: Ac
     case actionTypes.UPDATE_USER:
         return []
     default:
-      return state.user;
+      return state;
   }
 };

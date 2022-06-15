@@ -11,7 +11,6 @@ const { Title } = Typography;
 
 export const NavigationBar : React.FC = () => {
   const userInfo = useSelector<userInitialization, userInitialization["user"]>((state) => state.user);
-  console.log(userInfo);
   return (
     <nav>
       <Layout>
