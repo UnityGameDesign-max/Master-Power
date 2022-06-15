@@ -1,5 +1,8 @@
 .buttons {
-  margin-bottom: 20em;
+  margin: 0 0 5em 2em;
+  text-align: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .option-btn {
@@ -8,7 +11,7 @@
   color: #fff;
   cursor: pointer;
   border-radius: 7px;
-  padding: 0.9em 1.2em;
+  padding: 0.9em 1.9em;
   font-weight: 600;
 }
 
@@ -19,13 +22,20 @@ section p {
   font-size: 0.95rem;
 }
 
-.manual-auto {
+.red-btn-mode, .red-btn-lead {
   background-color: rgba(20, 96, 196, 0.541);
 }
 
 .lead {
-  padding-inline: 2em;
+  padding-inline: 2.6em;
   display: block;
+}
+
+.blue-btn-mode {
   background-color: rgba(196, 20, 20, 0.541);
+}
+
+.blue-btn-lead {
+  background-color: #116161;
 }
 /*# sourceMappingURL=Button.css.map */

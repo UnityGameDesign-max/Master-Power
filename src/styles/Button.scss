@@ -7,7 +7,9 @@ $silver-color: #d7d7d7;
     font-weight: 600;
 }
 .buttons{
-    margin-bottom: 20em;
+    margin: 0 0 5em 2em;
+    text-align: center;
+    align-self: flex-end;
 }
 .option-btn{
     border: 3px solid $silver-color ;
@@ -15,7 +17,7 @@ $silver-color: #d7d7d7;
     color: $tertiary-color;
     cursor: pointer;
     border-radius: 7px;
-    padding: 0.9em 1.2em;
+    padding: 0.9em 1.9em;
     @include typographyFormat;
 }
 
@@ -25,11 +27,18 @@ section p{
     @include typographyFormat;
     font-size: 0.95rem;
 }
-.manual-auto{
-    background-color: $manual-auto-button-color;
+
+.red-btn-mode, .red-btn-lead{
+    background-color: $manual-auto-button-color
 }
 .lead{
-    padding-inline: 2em;
+    padding-inline: 2.6em;
     display: block;
+}
+.blue-btn-mode{
     background-color: $lead-button-color;
+}
+
+.blue-btn-lead{
+    background-color: rgb(17, 97, 97);
 }

@@ -1,0 +1,13 @@
+@mixin flexItems{
+    display: flex;
+}
+.nav-header{
+    @include flexItems;
+    justify-content: space-between;
+}
+
+.nav-header-items{
+    @include flexItems;
+    align-items: center;
+    gap: 0.8em;
+}

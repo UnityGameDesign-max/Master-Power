@@ -11,20 +11,14 @@ main {
 }
 
 .utility-reference {
-  fill: #1e7dcf;
+  position: relative;
 }
 
 .line-breaker {
   cursor: pointer;
 }
 
-.open {
-  -webkit-transform: rotate(-130deg);
-          transform: rotate(-130deg);
-}
-
-.close {
-  -webkit-transform: rotate();
-          transform: rotate();
+svg {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=Main.css.map */

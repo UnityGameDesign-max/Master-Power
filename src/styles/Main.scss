@@ -2,7 +2,6 @@
 $primary-color: #333; 
 main{
     display: flex;
-    // place-items: center;
     background-color: $primary-color;
     height: 100vh;
 }
@@ -10,14 +9,14 @@ main{
     margin-left: 140px;
 }
 .utility-reference{
-    fill: rgb(30, 125, 207);
+    position: relative;
 }
 .line-breaker{
     cursor: pointer;
 }
-.open{
-    transform:rotate(-130deg);
+svg{
+    margin-top: 10px;
 }
-.close{
-    transform: rotate();
-}
+
+
+
